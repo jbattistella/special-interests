@@ -79,8 +79,8 @@ func QuesitonableCauseAPI() {
         Handler:      r,
         Addr:         "0.0.0.0:" + port,
         // Good practice: enforce timeouts for servers you create!
-        WriteTimeout: 15 * time.Second,
-        ReadTimeout:  15 * time.Second,
+        // WriteTimeout: 15 * time.Second,
+        // ReadTimeout:  15 * time.Second,
     }
 
 
