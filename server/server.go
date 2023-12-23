@@ -73,7 +73,7 @@ func QuesitonableCauseAPI() {
 	r.HandleFunc("/prompt", getPromptMsgHandler).Methods("GET")
 	r.HandleFunc("/", qCauseHome).Methods("GET")
 
-	port = os.Getenv("PORT")
+	port := os.Getenv("PORT")
 
 	srv := &http.Server{
         Handler:      r,
