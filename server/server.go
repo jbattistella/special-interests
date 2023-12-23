@@ -6,8 +6,10 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 
 	"github.com/jbattistella/special-interests/engine"
 	_"gorm.io/gorm"
@@ -76,5 +78,5 @@ func QuesitonableCauseAPI() {
 	// r.HandleFunc("/vegetables/{name}", a.deleteVegetable).Methods("DELETE")
 
 	log.Println("Listening on port 8080")
-	log.Fatal(http.ListenAndServe("PORT", r))
+	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), r))
 }
