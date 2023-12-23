@@ -73,6 +73,16 @@ func QuesitonableCauseAPI() {
 	r.HandleFunc("/prompt", getPromptMsgHandler).Methods("GET")
 	r.HandleFunc("/", qCauseHome).Methods("GET")
 
+	port = os.Getenv("PORT")
+
+	srv := &http.Server{
+        Handler:      r,
+        Addr:         "0.0.0.0:" + port,
+        // Good practice: enforce timeouts for servers you create!
+        WriteTimeout: 15 * time.Second,
+        ReadTimeout:  15 * time.Second,
+    }
+
 
 	//database
 	// r.HandleFunc("/vegetables/all", a.getVegetables).Methods("GET")
@@ -82,5 +92,5 @@ func QuesitonableCauseAPI() {
 	// r.HandleFunc("/vegetables/{name}", a.deleteVegetable).Methods("DELETE")
 
 	log.Println("Listening on port 8080")
-	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), r))
+	log.Fatal(srv.ListenAndServe())
 }
