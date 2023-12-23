@@ -57,6 +57,10 @@ func getPromptMsgHandler(w http.ResponseWriter, r *http.Request) {
 
 func QuesitonableCauseAPI() {
 
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+
 	// DB, err := database.ConnectDB()
 	// if err != nil {
 	// 	log.Fatal()
