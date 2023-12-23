@@ -83,14 +83,6 @@ func QuesitonableCauseAPI() {
         // ReadTimeout:  15 * time.Second,
     }
 
-
-	//database
-	// r.HandleFunc("/vegetables/all", a.getVegetables).Methods("GET")
-	// r.HandleFunc("/vegetables/{name}", a.getVegetable).Methods("GET")
-	// r.HandleFunc("/vegetables", a.createVegetable).Methods("POST")
-	// r.HandleFunc("/vegetables", a.updateVegetable).Methods("PUT")
-	// r.HandleFunc("/vegetables/{name}", a.deleteVegetable).Methods("DELETE")
-
 	log.Println("Listening on port 8080")
 	log.Fatal(srv.ListenAndServe())
 }
