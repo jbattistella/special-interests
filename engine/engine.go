@@ -26,7 +26,7 @@ func Engine() (AppResponse, string, error){
 	DB.AutoMigrate(&database.QC_Prompts{})
 
 
-	max:=7
+	max:=22
 	min:=1
 
 	var groupPrompt database.QC_Prompts
